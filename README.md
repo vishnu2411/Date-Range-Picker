@@ -41,3 +41,11 @@ below the calendars.
 
 Predefined Ranges:
 
+1. last 7 days:
+
+![image](https://github.com/user-attachments/assets/146196db-89f7-461a-9eb7-16158ec5f635)
+
+2. last 30 days:
+
+
+
