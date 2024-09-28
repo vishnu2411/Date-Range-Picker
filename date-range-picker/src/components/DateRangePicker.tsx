@@ -71,11 +71,6 @@ const DateRangePicker: React.FC<DateRangePickerProps> = ({ predefinedRanges }) =
         disabled={isPredefinedSelected} 
         predefinedRanges={predefinedRanges}
       />
-      
-      <PredefinedRanges 
-        ranges={predefinedRanges} 
-        onSelectRange={handlePredefinedRangeSelect} 
-      />
       {displayedRange && (
         <div className="selected-range">
           <h4>Selected Range:</h4>
@@ -86,6 +81,10 @@ const DateRangePicker: React.FC<DateRangePickerProps> = ({ predefinedRanges }) =
           
         </div>
       )}
+      <PredefinedRanges 
+        ranges={predefinedRanges} 
+        onSelectRange={handlePredefinedRangeSelect} 
+      />
     </div>
   );
 };
