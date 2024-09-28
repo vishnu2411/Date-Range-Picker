@@ -21,12 +21,8 @@ const DateRangePicker: React.FC<DateRangePickerProps> = ({ predefinedRanges }) =
   const [displayedRange, setDisplayedRange] = useState<string | null>(null);
   const [isPredefinedSelected, setIsPredefinedSelected] = useState(false);
 
-  //when a start and end date is selectd the states are set for start and end dates, the weekedays and weekends are segregated
-  //for logging
-  const handleDateChange = (start: Date | null, end: Date | null) => {
-    setStartDate(start);
-    setEndDate(end);
 
+  const segregateAndLogDates = (start: Date | null, end: Date | null) => {
     const weekends: Date[] = [];
     if (start && end) {
       const currentDate = new Date(start);
@@ -38,7 +34,16 @@ const DateRangePicker: React.FC<DateRangePickerProps> = ({ predefinedRanges }) =
       }
     }
     
-    console.log([start, end], weekends);
+    console.log("weekdays range and weekend dates in selected range " + [start, end], weekends);
+  }
+
+  //when a start and end date is selectd the states are set for start and end dates, the weekedays and weekends are segregated
+  //for logging
+  const handleDateChange = (start: Date | null, end: Date | null) => {
+    setStartDate(start);
+    setEndDate(end);
+    segregateAndLogDates(start, end);
+
   };
 
   //when predefined rnage is selected the start and end dates are set in the state
@@ -47,12 +52,13 @@ const DateRangePicker: React.FC<DateRangePickerProps> = ({ predefinedRanges }) =
   const handlePredefinedRangeSelect = (range: PredefinedRange) => {
     setStartDate(range.startDate);
     setEndDate(range.endDate);
-
+    
     const formattedRange = `${range.startDate.toLocaleDateString()} - ${range.endDate.toLocaleDateString()}`;
     setDisplayedRange(formattedRange);
     setIsPredefinedSelected(true);
 
     console.log('Predefined Range Selected:', range);
+    segregateAndLogDates(range.startDate, range.endDate);
   };
 
   //when the predefined range is cleared all the dates and ranges are set to null and the sPredefinedSelected is set to false
