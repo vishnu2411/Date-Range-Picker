@@ -1,3 +1,11 @@
+# To Run the Application
+1. Clone this repo into your local.
+2. Open this repository in VS Code or any other IDE.
+3. Make sure you are in the directory localpath\Date-Range-Picker\date-range-picker.
+4. give the command "npm run build" to build the project (to be done for the first time).
+5. give the command "npm start" to start the application.
+6. open any browser and give the command http://localhost:3000/ to launch the application
+
 # Date-Range-Picker
 ![image](https://github.com/user-attachments/assets/e8af61fa-bfd1-4677-8f40-a6d0163a8d5f)
 
@@ -33,7 +41,8 @@ array of weekend dates within that range as the second element (e.g. [2022-12-03
 
 The weekdays and weekends are stored in an array, can be seen in console:
 
-![image](https://github.com/user-attachments/assets/2b14e2b6-10b0-41df-96ef-18c27d7d60c4)
+![image](https://github.com/user-attachments/assets/0d17ab97-ed3e-4abc-8405-c4115a70bee3)
+
 
 ● The component should include a prop that allows the user to input predefined ranges,
 such as the last 7 days or last 30 days. These predefined ranges should be displayed
@@ -43,9 +52,13 @@ Predefined Ranges:
 
 1. last 7 days:
 
-![image](https://github.com/user-attachments/assets/146196db-89f7-461a-9eb7-16158ec5f635)
+![image](https://github.com/user-attachments/assets/169a39d5-6e2a-4f6b-aed7-b4d5d91d86fe)
+
 
 2. last 30 days:
+
+![image](https://github.com/user-attachments/assets/31ddb8bc-9fac-4498-8360-1cd5a9963c35)
+
 
 
 
