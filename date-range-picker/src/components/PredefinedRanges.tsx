@@ -1,23 +1,27 @@
 import React from 'react';
 
+interface PredefinedRange {
+  label: string;
+  startDate: Date;
+  endDate: Date;
+}
+
 interface PredefinedRangesProps {
-  ranges: string[];
-  onSelectRange: (start: Date | null, end: Date | null) => void;
+  ranges: PredefinedRange[];
+  onSelectRange: (range: PredefinedRange) => void;
 }
 
 const PredefinedRanges: React.FC<PredefinedRangesProps> = ({ ranges, onSelectRange }) => {
-  const handleRangeClick = (days: number) => {
-    const endDate = new Date();
-    const startDate = new Date();
-    startDate.setDate(endDate.getDate() - days);
-    onSelectRange(startDate, endDate);
-  };
-
   return (
     <div className="predefined-ranges">
-      {ranges.map((range, index) => (
-        <button key={index} onClick={() => handleRangeClick(range === "Last 7 Days" ? 7 : 30)}>
-          {range}
+      <h3>Predefined Ranges</h3>
+      {ranges.map((range) => (
+        <button 
+          key={range.label} 
+          onClick={() => onSelectRange(range)}
+          className="predefined-range-button"
+        >
+          {range.label}
         </button>
       ))}
     </div>
